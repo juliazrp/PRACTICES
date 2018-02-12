@@ -9,6 +9,8 @@ int main()
 	int mas[20001];
 	int i, j, k, l = 0, min;
 	for (i = 0; i<20000; i++)
+		mas[i] = 0 + rand() % 10;
+	int t = clock();
 	for (j = 0; j < 20000; j++)
 	{
 		k = i; min = mas[i];
@@ -24,11 +26,13 @@ int main()
 		mas[j] = min;
 		//cout << mas[j]<<endl;
 	}
+	cout << "Selection sort (200000 elements): " << ((float)t) / CLOCKS_PER_SEC << " sec" << endl;
 	//count
 	int c[10];
 	int mas1[200001];
 	for (i = 0; i<200000; i++)
 		mas1[i] = 0 + rand() % 10;
+	int t1 = clock();
 	for (i = 0; i < 10; i++)
 		c[i] = 0;
 	for (i = 0; i < 200000; i++) {
@@ -42,6 +46,7 @@ int main()
 			i++;
 		}
 	}
+	cout << "Count sort (200000 elements): " << ((float)t1) / CLOCKS_PER_SEC << " sec" << endl;
 	system("pause");
 	return 0;
 }
